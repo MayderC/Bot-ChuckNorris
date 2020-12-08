@@ -15,7 +15,6 @@ async def norris(ctx):
 @bot.command()
 async def big(ctx, *args):
     text = list(args)
-    text = list(args)
     text = " ".join(text)
     text = string_to_regional(text)
     await ctx.send(text)
