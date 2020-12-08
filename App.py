@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from Token import myToken
 from Peticion import peticion, req
+from letter import string_to_regional
 
 
 bot = commands.Bot(command_prefix='!')
@@ -10,6 +11,16 @@ bot = commands.Bot(command_prefix='!')
 async def norris(ctx):
     texto = peticion()
     await ctx.send(texto)
+
+@bot.command()
+async def big(ctx, *args):
+    text = list(args)
+    text = list(args)
+    text = " ".join(text)
+    text = string_to_regional(text)
+    await ctx.send(text)
+   
+
 
 @bot.command()
 async def joke(ctx):
